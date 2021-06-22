@@ -23,7 +23,6 @@ public class OrderReceipt {
     public String printReceipt() {
         StringBuilder output = new StringBuilder();
 
-        final String NEW_LINE = "\n";
         final String header = PRINT_ORDERS + NEW_LINE;
         output.append(header);
 
@@ -34,16 +33,8 @@ public class OrderReceipt {
         // prints lineItems
         double totalSalesTax = 0d;
         double total = 0d;
-        final String TAB = "\t";
         for (LineItem lineItem : order.getLineItems()) {
-            output.append(lineItem.getDescription());
-            output.append(TAB);
-            output.append(lineItem.getPrice());
-            output.append(TAB);
-            output.append(lineItem.getQuantity());
-            output.append(TAB);
-            output.append(lineItem.totalAmount());
-            output.append(NEW_LINE);
+            output.append(lineItem.generateReceipt());
 
             // calculate sales tax @ rate of 10%
             double salesTax = lineItem.totalAmount() * .10;
