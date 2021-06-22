@@ -25,10 +25,7 @@ public class OrderReceipt {
 
         final String header = PRINT_ORDERS + NEW_LINE;
         output.append(header);
-
-        // print date, bill no, customer name
-        output.append(order.getCustomerName());
-        output.append(order.getCustomerAddress());
+        output.append(order.generateReceipt());
 
         // prints lineItems
         double totalSalesTax = 0d;
