@@ -42,4 +42,9 @@ public class LineItem {
 		final double TEN_PERCENT = .10;
 		return totalAmount() * TEN_PERCENT;
 	}
+
+	public double getTotalCost() {
+		final double TEN_PERCENT = .10;
+		return totalAmount() + getSalesTax();
+	}
 }

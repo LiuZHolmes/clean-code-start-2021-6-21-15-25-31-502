@@ -4,4 +4,4 @@
 - [x] extract constant string parameter
 - [x] rename totalSalesTx and tot
 - [x] do append in another way
-- [ ] calculate salesTax + totalAmount in lineItem and extract .10
+- [x] calculate salesTax + totalAmount in lineItem and extract .10
