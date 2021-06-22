@@ -29,9 +29,6 @@ public class OrderReceipt {
         output.append(header);
         output.append(order.generateReceipt());
 
-        output.append(order.getLineItems().stream()
-                .map(LineItem::generateReceipt).collect(Collectors.joining()));
-
         double totalSalesTax = order.getLineItems().stream().mapToDouble(LineItem::getSalesTax).sum();
         double total = order.getLineItems().stream().mapToDouble(LineItem::getTotalCost).sum();
         output.append(generateFooter(totalSalesTax, total));

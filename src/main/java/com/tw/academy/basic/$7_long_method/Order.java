@@ -1,6 +1,7 @@
 package com.tw.academy.basic.$7_long_method;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Order {
     String customerName;
@@ -22,6 +23,8 @@ public class Order {
     }
 
     public String generateReceipt() {
-        return customerName + address;
+        final String lineItems = this.lineItems.stream()
+                .map(LineItem::generateReceipt).collect(Collectors.joining());
+        return customerName + address + lineItems;
     }
 }
