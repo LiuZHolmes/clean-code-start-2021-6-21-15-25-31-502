@@ -20,7 +20,7 @@ public class OrderReceipt {
         return order.getCustomerName();
     }
 
-    public String printReceipt() {
+    public String generateReceipt() {
         StringBuilder output = new StringBuilder();
 
         final String header = PRINT_ORDERS + NEW_LINE;
