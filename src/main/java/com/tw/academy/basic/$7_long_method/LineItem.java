@@ -15,19 +15,7 @@ public class LineItem {
 		this.quantity = quantity;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-    double totalAmount() {
+	double totalAmount() {
         return price * quantity;
     }
 
@@ -44,7 +32,6 @@ public class LineItem {
 	}
 
 	public double getTotalCost() {
-		final double TEN_PERCENT = .10;
 		return totalAmount() + getSalesTax();
 	}
 }

@@ -17,10 +17,6 @@ public class Order {
         return customerName;
     }
 
-    public String getCustomerAddress() {
-        return address;
-    }
-
     public List<LineItem> getLineItems() {
         return lineItems;
     }

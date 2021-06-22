@@ -27,7 +27,6 @@ public class OrderReceipt {
         output.append(header);
         output.append(order.generateReceipt());
 
-        // prints lineItems
         double totalSalesTax = 0d;
         double total = 0d;
         for (LineItem lineItem : order.getLineItems()) {
