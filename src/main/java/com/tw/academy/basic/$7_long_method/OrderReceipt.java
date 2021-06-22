@@ -40,12 +40,13 @@ public class OrderReceipt {
             // calculate total amount of lineItem = price * quantity + 10 % sales tax
             total += lineItem.totalAmount() + salesTax;
         }
-
-        // prints the state tax
-        output.append(SALES_TAX).append(TAB).append(totalSalesTax);
-
-        // print total amount
-        output.append(TOTAL_AMOUNT).append(TAB).append(total);
+        output.append(generateFooter(totalSalesTax, total));
         return output.toString();
+    }
+
+    private String generateFooter(double totalSalesTax, double total) {
+        return SALES_TAX + TAB
+                + totalSalesTax + TOTAL_AMOUNT + TAB
+                + total;
     }
 }

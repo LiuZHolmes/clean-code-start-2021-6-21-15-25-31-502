@@ -3,5 +3,5 @@
 - [x] remove comment and redundant code
 - [x] extract constant string parameter
 - [x] rename totalSalesTx and tot
-- [ ] do append in another way
+- [x] do append in another way
 - [ ] calculate salesTax + totalAmount in lineItem and extract .10
