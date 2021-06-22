@@ -1,4 +1,4 @@
-- [ ] rename field parameter order
+- [x] rename field parameter order
 - [ ] rename method printCustomerName
 - [ ] remove comment and redundant code
 - [ ] extract constant string parameter
