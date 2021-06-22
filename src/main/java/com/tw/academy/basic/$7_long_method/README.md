@@ -7,3 +7,4 @@
 - [x] calculate salesTax + totalAmount in lineItem and extract .10
 - [x] rename printReceipt
 - [x] separate the three jobs in the loop
+- [ ] move feature envy of LineItem to order
