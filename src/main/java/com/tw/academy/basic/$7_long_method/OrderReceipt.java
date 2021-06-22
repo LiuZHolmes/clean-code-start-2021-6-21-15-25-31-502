@@ -1,5 +1,7 @@
 package com.tw.academy.basic.$7_long_method;
 
+import static com.tw.academy.basic.$7_long_method.OrderReceiptConstant.*;
+
 /**
  * This class is a example for bad smell;
  *
@@ -21,8 +23,9 @@ public class OrderReceipt {
     public String printReceipt() {
         StringBuilder output = new StringBuilder();
 
-        // print headers
-        output.append("======Printing Orders======\n");
+        final String NEW_LINE = "\n";
+        final String header = PRINT_ORDERS + NEW_LINE;
+        output.append(header);
 
         // print date, bill no, customer name
         output.append(order.getCustomerName());
@@ -31,15 +34,16 @@ public class OrderReceipt {
         // prints lineItems
         double totSalesTx = 0d;
         double tot = 0d;
+        final String TAB = "\t";
         for (LineItem lineItem : order.getLineItems()) {
             output.append(lineItem.getDescription());
-            output.append('\t');
+            output.append(TAB);
             output.append(lineItem.getPrice());
-            output.append('\t');
+            output.append(TAB);
             output.append(lineItem.getQuantity());
-            output.append('\t');
+            output.append(TAB);
             output.append(lineItem.totalAmount());
-            output.append('\n');
+            output.append(NEW_LINE);
 
             // calculate sales tax @ rate of 10%
             double salesTax = lineItem.totalAmount() * .10;
@@ -50,10 +54,10 @@ public class OrderReceipt {
         }
 
         // prints the state tax
-        output.append("Sales Tax").append('\t').append(totSalesTx);
+        output.append(SALES_TAX).append(TAB).append(totSalesTx);
 
         // print total amount
-        output.append("Total Amount").append('\t').append(tot);
+        output.append(TOTAL_AMOUNT).append(TAB).append(tot);
         return output.toString();
     }
 }

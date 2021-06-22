@@ -1,7 +1,7 @@
 - [x] rename field parameter order
 - [x] rename method printCustomerName
 - [x] remove comment and redundant code
-- [ ] extract constant string parameter
+- [x] extract constant string parameter
 - [ ] rename totalSalesTx and tot
 - [ ] do append in another way
 - [ ] calculate salesTax + totalAmount in lineItem and extract .10
