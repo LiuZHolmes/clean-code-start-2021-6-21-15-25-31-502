@@ -6,4 +6,4 @@
 - [x] do append in another way
 - [x] calculate salesTax + totalAmount in lineItem and extract .10
 - [x] rename printReceipt
-- [ ] separate the three jobs in the loop
+- [x] separate the three jobs in the loop

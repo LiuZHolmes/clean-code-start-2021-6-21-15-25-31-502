@@ -29,16 +29,13 @@ public class OrderReceipt {
         output.append(header);
         output.append(order.generateReceipt());
 
-        double totalSalesTax = 0d;
-        double total = 0d;
-
         output.append(order.getLineItems().stream()
                 .map(LineItem::generateReceipt).collect(Collectors.joining()));
-        for (LineItem lineItem : order.getLineItems()) {
-            totalSalesTax += lineItem.getSalesTax();
-            total += lineItem.getTotalCost();
-        }
+
+        double totalSalesTax = order.getLineItems().stream().mapToDouble(LineItem::getSalesTax).sum();
+        double total = order.getLineItems().stream().mapToDouble(LineItem::getTotalCost).sum();
         output.append(generateFooter(totalSalesTax, total));
+
         return output.toString();
     }
 
