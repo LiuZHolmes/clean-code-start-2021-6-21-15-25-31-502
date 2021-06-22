@@ -37,4 +37,9 @@ public class LineItem {
 				+ quantity + TAB
 				+ totalAmount() + NEW_LINE;
 	}
+
+	public double getSalesTax() {
+		final double TEN_PERCENT = .10;
+		return totalAmount() * TEN_PERCENT;
+	}
 }
