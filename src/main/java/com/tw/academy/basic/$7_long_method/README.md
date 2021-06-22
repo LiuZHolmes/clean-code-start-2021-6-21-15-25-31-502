@@ -8,4 +8,4 @@
 - [x] rename printReceipt
 - [x] separate the three jobs in the loop
 - [x] move feature envy of LineItem to order
-- [ ] remove StringBuilder
+- [x] remove StringBuilder

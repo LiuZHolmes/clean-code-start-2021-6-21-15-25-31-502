@@ -23,14 +23,17 @@ public class OrderReceipt {
     }
 
     public String generateReceipt() {
-        StringBuilder output = new StringBuilder();
+        return generateHeader()
+                + generateBody()
+                + generateFooter(order.getTotalSalesTax(), order.getTotal());
+    }
 
-        final String header = PRINT_ORDERS + NEW_LINE;
-        output.append(header);
-        output.append(order.generateReceipt());
-        output.append(generateFooter(order.getTotalSalesTax(), order.getTotal()));
+    private String generateBody() {
+        return order.generateReceipt();
+    }
 
-        return output.toString();
+    private String generateHeader() {
+        return PRINT_ORDERS + NEW_LINE;
     }
 
     private String generateFooter(double totalSalesTax, double total) {
