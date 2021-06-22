@@ -18,13 +18,22 @@ public class Order {
         return customerName;
     }
 
-    public List<LineItem> getLineItems() {
-        return lineItems;
-    }
-
     public String generateReceipt() {
         final String lineItems = this.lineItems.stream()
-                .map(LineItem::generateReceipt).collect(Collectors.joining());
+                .map(LineItem::generateReceipt)
+                .collect(Collectors.joining());
         return customerName + address + lineItems;
+    }
+
+    public double getTotalSalesTax() {
+        return lineItems.stream()
+                .mapToDouble(LineItem::getSalesTax)
+                .sum();
+    }
+
+    public double getTotal() {
+        return lineItems.stream()
+                .mapToDouble(LineItem::getTotalCost)
+                .sum();
     }
 }
