@@ -1,6 +1,6 @@
 - [x] rename field parameter order
 - [x] rename method printCustomerName
-- [ ] remove comment and redundant code
+- [x] remove comment and redundant code
 - [ ] extract constant string parameter
 - [ ] rename totalSalesTx and tot
 - [ ] do append in another way
