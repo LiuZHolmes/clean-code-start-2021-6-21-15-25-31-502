@@ -1,5 +1,7 @@
 package com.tw.academy.basic.$7_long_method;
 
+import java.util.stream.Collectors;
+
 import static com.tw.academy.basic.$7_long_method.OrderReceiptConstant.*;
 
 /**
@@ -29,8 +31,10 @@ public class OrderReceipt {
 
         double totalSalesTax = 0d;
         double total = 0d;
+
+        output.append(order.getLineItems().stream()
+                .map(LineItem::generateReceipt).collect(Collectors.joining()));
         for (LineItem lineItem : order.getLineItems()) {
-            output.append(lineItem.generateReceipt());
             totalSalesTax += lineItem.getSalesTax();
             total += lineItem.getTotalCost();
         }
